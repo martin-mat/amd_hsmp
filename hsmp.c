@@ -233,7 +233,7 @@ int hsmp_send_message(struct hsmp_message *msg)
 
 	return ret;
 }
-EXPORT_SYMBOL_NS_GPL(hsmp_send_message, AMD_HSMP);
+EXPORT_SYMBOL_GPL(hsmp_send_message);
 
 int hsmp_test(u16 sock_ind, u32 value)
 {
@@ -264,7 +264,7 @@ int hsmp_test(u16 sock_ind, u32 value)
 
 	return ret;
 }
-EXPORT_SYMBOL_NS_GPL(hsmp_test, AMD_HSMP);
+EXPORT_SYMBOL_GPL(hsmp_test);
 
 static bool is_get_msg(struct hsmp_message *msg)
 {
@@ -358,7 +358,7 @@ ssize_t hsmp_metric_tbl_read(struct hsmp_socket *sock, char *buf, size_t size)
 
 	return size;
 }
-EXPORT_SYMBOL_NS_GPL(hsmp_metric_tbl_read, AMD_HSMP);
+EXPORT_SYMBOL_GPL(hsmp_metric_tbl_read);
 
 int hsmp_get_tbl_dram_base(u16 sock_ind)
 {
@@ -392,7 +392,7 @@ int hsmp_get_tbl_dram_base(u16 sock_ind)
 	}
 	return 0;
 }
-EXPORT_SYMBOL_NS_GPL(hsmp_get_tbl_dram_base, AMD_HSMP);
+EXPORT_SYMBOL_GPL(hsmp_get_tbl_dram_base);
 
 int hsmp_cache_proto_ver(u16 sock_ind)
 {
@@ -409,7 +409,7 @@ int hsmp_cache_proto_ver(u16 sock_ind)
 
 	return ret;
 }
-EXPORT_SYMBOL_NS_GPL(hsmp_cache_proto_ver, AMD_HSMP);
+EXPORT_SYMBOL_GPL(hsmp_cache_proto_ver);
 
 static const struct file_operations hsmp_fops = {
 	.owner		= THIS_MODULE,
@@ -428,19 +428,19 @@ int hsmp_misc_register(struct device *dev)
 
 	return misc_register(&hsmp_pdev.mdev);
 }
-EXPORT_SYMBOL_NS_GPL(hsmp_misc_register, AMD_HSMP);
+EXPORT_SYMBOL_GPL(hsmp_misc_register);
 
 void hsmp_misc_deregister(void)
 {
 	misc_deregister(&hsmp_pdev.mdev);
 }
-EXPORT_SYMBOL_NS_GPL(hsmp_misc_deregister, AMD_HSMP);
+EXPORT_SYMBOL_GPL(hsmp_misc_deregister);
 
 struct hsmp_plat_device *get_hsmp_pdev(void)
 {
 	return &hsmp_pdev;
 }
-EXPORT_SYMBOL_NS_GPL(get_hsmp_pdev, AMD_HSMP);
+EXPORT_SYMBOL_GPL(get_hsmp_pdev);
 
 MODULE_DESCRIPTION("AMD HSMP Common driver");
 MODULE_VERSION(DRIVER_VERSION);
